@@ -1,0 +1,30 @@
+
+<div class="container">
+  {{title}}
+
+<div *ngFor="let row of keys">
+  <div class="btn-group" role="group" aria-label="Keypad">
+
+    <button (click)="keyPressed(row[0])" class="btn btn-outline-primary key">
+      {{row[0].secondary}}
+      {{row[0].primary}}
+    </button>
+
+    <button (click)="keyPressed(row[1])" class="btn btn-outline-primary key">
+      {{row[1].secondary}}
+      {{row[1].primary}}
+    </button>
+
+    <button (click)="keyPressed(row[2])" class="btn btn-outline-primary key">
+      {{row[2].secondary}}
+      {{row[2].primary}}
+    </button>
+
+  </div>
+</div>
+
+<div *ngFor="let entry of history">
+  {{entry.timestamp}}: User clicks on {{entry.key.primary}}, the coordinates are {{entry.pair}}
+</div>
+
+</div>
